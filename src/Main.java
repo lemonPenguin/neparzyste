@@ -7,6 +7,8 @@ public class Main {
     public static void main(String args[]){
         Tablice tablicelosowe = new Tablice(100);
         tablicelosowe.znajdźMaxMin();
+        saveFile(tablicelosowe.pobierz(), " Liczby losowe.txt");
+        System.out.println();
     }
 
     public static void saveFile(int[] tab, String plik) {
