@@ -1,12 +1,19 @@
-class Average {
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-    public static void main(String args[]) {
-        double[] nums = {10.1, 11.2, 12.3, 13.4, 14.5, 23.1};
-        double result = 0;
-        //przypisanie wartości do tablicy:
-        nums[3] = 14.3;
-        for(int i=0; i< nums.length; i++)  result += nums[i];
-        System.out.println("Średnia wynosi " + result / nums.length);
+class Main {
 
+    public static void main(String[] args){
+        Tablice tablicelosowe = new Tablice(100);
+        tablicelosowe.znajdźMaxMin();
+    }
+
+    public static void saveFile(int[] tab, String plik) {
+        String dane = "";
+        for(int e : tab) dane += e + "\n";
+        Files.write(Paths.get(plik), dane.getBytes());
+    } catch (IOException e) {
+        e.printStackTrace();
     }
 }
